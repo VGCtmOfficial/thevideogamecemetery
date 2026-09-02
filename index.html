@@ -4,143 +4,443 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Video Game Archive</title>
+    <title>The Video Game Cemetery</title>
 
     <style>
-        body {
-            margin: 0;
-            background: #111;
-            color: #ddd;
-            font-family: Arial, Helvetica, sans-serif;
+        * {
+            box-sizing: border-box;
         }
 
+        body {
+            margin: 0;
+            background: #0d0d0d;
+            color: #d6d6d6;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        /* =========================
+           HEADER / BANNER
+           ========================= */
+
         header {
-            background: #1b1b1b;
-            border-bottom: 1px solid #333;
-            padding: 40px 20px;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.8)),
+                url("images/banner.jpg") center/cover no-repeat;
+
+            border-bottom: 2px solid #333;
         }
 
         header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 60px;
             color: #fff;
+            letter-spacing: 4px;
+            text-shadow: 3px 3px 8px #000;
         }
 
         header p {
-            margin: 10px 0 0;
-            color: #999;
-            font-size: 16px;
+            font-size: 20px;
+            color: #bbb;
+            font-style: italic;
         }
+
+        /* =========================
+           MAIN CONTENT
+           ========================= */
 
         main {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 50px 25px;
         }
 
-        .intro {
+        section {
+            margin-bottom: 70px;
+        }
+
+        h2 {
             text-align: center;
-            margin-bottom: 50px;
+            color: #eee;
+            font-size: 32px;
+            margin-bottom: 25px;
         }
 
-        .intro h2 {
-            color: #fff;
+        /* =========================
+           WELCOME
+           ========================= */
+
+        .welcome {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 18px;
         }
 
-        .games {
+        /* =========================
+           FEATURED ARCHIVES
+           ========================= */
+
+        .archive-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
         }
 
-        .game {
-            background: #1b1b1b;
-            border: 1px solid #333;
-            padding: 25px;
+        .archive-card {
+            background: #181818;
+            border: 1px solid #383838;
             text-decoration: none;
-            color: #ddd;
+            color: inherit;
             transition: 0.2s;
+            overflow: hidden;
         }
 
-        .game:hover {
+        .archive-card:hover {
+            transform: translateY(-5px);
+            border-color: #777;
+            background: #202020;
+        }
+
+        .archive-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
             background: #252525;
-            border-color: #666;
         }
 
-        .game h3 {
+        .archive-content {
+            padding: 20px;
+        }
+
+        .archive-content h3 {
             margin-top: 0;
             color: #fff;
+            font-size: 22px;
         }
 
-        .game p {
-            color: #999;
-            font-size: 14px;
+        .archive-content p {
+            color: #aaa;
             line-height: 1.5;
+            font-size: 15px;
         }
+
+        /* =========================
+           CATALOGUE
+           ========================= */
+
+        .catalogue {
+            text-align: center;
+        }
+
+        .catalogue-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .catalogue-links a {
+            padding: 12px 20px;
+            background: #191919;
+            border: 1px solid #333;
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .catalogue-links a:hover {
+            background: #292929;
+            color: #fff;
+        }
+
+        /* =========================
+           CURATOR'S DESK
+           ========================= */
+
+        .curator {
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+            background: #171717;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .curator p {
+            line-height: 1.7;
+            color: #aaa;
+        }
+
+        /* =========================
+           FOOTER
+           ========================= */
 
         footer {
-            margin-top: 60px;
-            padding: 25px;
-            text-align: center;
             border-top: 1px solid #333;
+            padding: 35px;
+            text-align: center;
             color: #666;
-            font-size: 13px;
+            font-size: 14px;
         }
+
     </style>
 </head>
 
 <body>
 
 <header>
-    <h1>My Video Game Archive</h1>
-    <p>A personal collection, archive and preservation project</p>
+
+    <div>
+        <h1>THE VIDEO GAME CEMETERY</h1>
+        <p>An archive for games that should never be forgotten.</p>
+    </div>
+
 </header>
+
 
 <main>
 
-    <section class="intro">
-        <h2>Welcome</h2>
-        <p>
-            Welcome to my video game collecting and archiving project.
-            This website is currently under construction.
-        </p>
+    <!-- =========================
+         WELCOME
+         ========================= -->
+
+    <section>
+
+        <h2>Welcome to the Cemetery</h2>
+
+        <div class="welcome">
+
+            <p>
+                Welcome to the Video Game Cemetery — a personal museum,
+                archive and collection dedicated to the history, worlds,
+                characters and memories of video games.
+            </p>
+
+            <p>
+                Within these grounds lie detailed archives dedicated to
+                the games and series that deserve to be remembered,
+                researched and preserved.
+            </p>
+
+        </div>
+
     </section>
 
-    <section class="games">
 
-        <!-- Replace these placeholders with your actual games -->
+    <!-- =========================
+         FEATURED ARCHIVES
+         ========================= -->
 
-        <a class="game" href="#">
-            <h3>Game Title</h3>
+    <section>
+
+        <h2>Featured Archives</h2>
+
+        <div class="archive-grid">
+
+
+            <!-- CAVE OF MONSTERS -->
+
+            <a class="archive-card" href="#">
+
+                <img
+                    class="archive-image"
+                    src="images/cave-of-monsters.jpg"
+                    alt="Cave of Monsters">
+
+                <div class="archive-content">
+
+                    <h3>Cave of Monsters</h3>
+
+                    <p>
+                        The extensive Bubble Bobble universe archive,
+                        containing games, characters, monsters, guides,
+                        screenshots, history and more.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- CASTLEVANIA -->
+
+            <a class="archive-card" href="#">
+
+                <img
+                    class="archive-image"
+                    src="images/castlevania.jpg"
+                    alt="Castlevania">
+
+                <div class="archive-content">
+
+                    <h3>Castlevania</h3>
+
+                    <p>
+                        An expanding archive dedicated to the games,
+                        characters, creatures, history and mythology
+                        of the Castlevania series.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- NIGHTMARE CREATURES -->
+
+            <a class="archive-card" href="#">
+
+                <img
+                    class="archive-image"
+                    src="images/nightmare-creatures.jpg"
+                    alt="Nightmare Creatures">
+
+                <div class="archive-content">
+
+                    <h3>Nightmare Creatures</h3>
+
+                    <p>
+                        Explore the dark world of Nightmare Creatures,
+                        including its monsters, characters, locations,
+                        weapons and history.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- OPEN SLOT -->
+
+            <a class="archive-card" href="#">
+
+                <img
+                    class="archive-image"
+                    src="images/featured-four.jpg"
+                    alt="Featured archive">
+
+                <div class="archive-content">
+
+                    <h3>Archive Coming Soon</h3>
+
+                    <p>
+                        This section is reserved for another major
+                        archive from the Video Game Cemetery.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CEMETERY CATALOGUE
+         ========================= -->
+
+    <section class="catalogue">
+
+        <h2>The Cemetery Catalogue</h2>
+
+        <p>
+            Explore the wider collection.
+        </p>
+
+        <div class="catalogue-links">
+
+            <a href="#">Games</a>
+            <a href="#">Characters</a>
+            <a href="#">Monsters</a>
+            <a href="#">Consoles</a>
+            <a href="#">Guides</a>
+            <a href="#">History</a>
+            <a href="#">Soundtracks</a>
+            <a href="#">Collectibles</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURED GAME
+         ========================= -->
+
+    <section>
+
+        <h2>From the Grave...</h2>
+
+        <div class="archive-card">
+
+            <img
+                class="archive-image"
+                src="images/featured-game.jpg"
+                alt="Featured game">
+
+            <div class="archive-content">
+
+                <h3>Featured Game</h3>
+
+                <p>
+                    A featured game from the Cemetery collection.
+                    This section can change whenever a particular
+                    game, character or discovery deserves the spotlight.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CURATOR'S DESK
+         ========================= -->
+
+    <section>
+
+        <h2>The Curator's Desk</h2>
+
+        <div class="curator">
+
             <p>
-                Information, history, screenshots, music,
-                collectibles and archival material.
+                The Cemetery is an ongoing project. New games,
+                discoveries, research, screenshots, guides and
+                archival material will continue to be added.
             </p>
-        </a>
 
-        <a class="game" href="#">
-            <h3>Game Title</h3>
             <p>
-                Information, history, screenshots, music,
-                collectibles and archival material.
+                Check back regularly to see what has recently
+                been recovered from the grave.
             </p>
-        </a>
 
-        <a class="game" href="#">
-            <h3>Game Title</h3>
-            <p>
-                Information, history, screenshots, music,
-                collectibles and archival material.
-            </p>
-        </a>
+        </div>
 
     </section>
 
 </main>
 
+
 <footer>
-    © 2026 My Video Game Archive
+
+    <p>THE VIDEO GAME CEMETERY</p>
+    <p>Established 2016</p>
+
 </footer>
 
 </body>
