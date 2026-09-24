@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Castlevania | The Video Game Cemetery</title>
+
+    <style>
+
+        /* =========================================================
+           EARLY GAMEBOY FONT
+           ========================================================= */
+
+        @font-face {
+            font-family: "Early GameBoy";
+            src: url("fonts/Early GameBoy.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        /* =========================================================
+           BASIC PAGE SETTINGS
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            background-color: #000;
+
+            color: #d6d6d6;
+
+            font-family: "Early GameBoy", monospace;
+        }
+
+
+        /* =========================================================
+           CASTLEVANIA BACKGROUND
+           ========================================================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.75)
+                ),
+                url("images/castlevaniabg.png");
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            z-index: -2;
+        }
+
+
+        /* =========================================================
+           LOGO BANNER
+           ========================================================= */
+
+        .logo-banner {
+
+            width: 100%;
+
+            min-height: 180px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            background-color: #000;
+
+            border-bottom: 2px solid #333;
+        }
+
+
+        .logo-banner img {
+
+            display: block;
+
+            max-width: 90%;
+            max-height: 140px;
+
+            width: auto;
+            height: auto;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+           ========================================================= */
+
+        nav {
+
+            width: 100%;
+
+            background: rgba(0, 0, 0, 0.92);
+
+            border-bottom: 1px solid #444;
+        }
+
+
+        nav ul {
+
+            list-style: none;
+
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+        }
+
+
+        nav li {
+
+            margin: 0;
+        }
+
+
+        nav a {
+
+            display: block;
+
+            padding: 16px 24px;
+
+            color: #d6d6d6;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            border-left: 1px solid #222;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        nav li:last-child a {
+
+            border-right: 1px solid #222;
+        }
+
+
+        nav a:hover {
+
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        /* =========================================================
+           MAIN CONTENT
+           ========================================================= */
+
+        main {
+
+            width: 100%;
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 50px 25px 80px;
+        }
+
+
+        /* =========================================================
+           INTRODUCTION
+           ========================================================= */
+
+        .intro {
+
+            max-width: 900px;
+
+            margin: 0 auto 60px;
+
+            padding: 30px;
+
+            background: rgba(0, 0, 0, 0.82);
+
+            border: 1px solid #444;
+
+            text-align: center;
+        }
+
+
+        .intro h1 {
+
+            margin-top: 0;
+
+            color: #fff;
+
+            font-size: 32px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .intro p {
+
+            color: #bbb;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================================
+           SECTION TITLES
+           ========================================================= */
+
+        .section-title {
+
+            margin: 60px 0 30px;
+
+            text-align: center;
+
+            color: #fff;
+
+            font-size: 28px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================================
+           GAME GRID
+           ========================================================= */
+
+        .game-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(190px, 1fr));
+
+            gap: 25px;
+        }
+
+
+        /* =========================================================
+           GAME CARD
+           ========================================================= */
+
+        .game-card {
+
+            display: block;
+
+            background: rgba(10, 10, 10, 0.92);
+
+            border: 1px solid #3b3b3b;
+
+            text-decoration: none;
+
+            color: #fff;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .game-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #888;
+
+            background: rgba(25, 25, 25, 0.96);
+        }
+
+
+        /* =========================================================
+           BOX ART
+           ========================================================= */
+
+        .game-card img {
+
+            width: 100%;
+
+            aspect-ratio: 3 / 4;
+
+            object-fit: contain;
+
+            display: block;
+
+            background: #050505;
+
+            border-bottom: 1px solid #292929;
+        }
+
+
+        /* =========================================================
+           GAME TITLE
+           ========================================================= */
+
+        .game-title {
+
+            min-height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 15px;
+
+            text-align: center;
+
+            color: #fff;
+
+            font-size: 15px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        footer {
+
+            padding: 35px;
+
+            text-align: center;
+
+            background: rgba(0, 0, 0, 0.95);
+
+            border-top: 1px solid #333;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .logo-banner {
+
+                min-height: 130px;
+
+                padding: 20px;
+            }
+
+
+            .logo-banner img {
+
+                max-height: 90px;
+            }
+
+
+            nav a {
+
+                padding: 13px 14px;
+
+                font-size: 11px;
+            }
+
+
+            main {
+
+                padding: 30px 15px 60px;
+            }
+
+
+            .game-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 15px;
+            }
+
+
+            .game-title {
+
+                font-size: 12px;
+
+                min-height: 60px;
+
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         CASTLEVANIA LOGO BANNER
+         ========================================================= -->
+
+    <header class="logo-banner">
+
+        <!-- Replace this filename with the actual logo image -->
+        <img
+            src="images/castlevania-logo.png"
+            alt="Castlevania">
+            
+    </header>
+
+
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">CEMETERY</a>
+            </li>
+
+            <li>
+                <a href="#">GAMES</a>
+            </li>
+
+            <li>
+                <a href="#">CHARACTERS</a>
+            </li>
+
+            <li>
+                <a href="#">CREATURES</a>
+            </li>
+
+            <li>
+                <a href="#">GUIDES</a>
+            </li>
+
+            <li>
+                <a href="#">HISTORY</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================================================
+         MAIN
+         ========================================================= -->
+
+    <main>
+
+
+        <!-- INTRO -->
+
+        <section class="intro">
+
+            <h1>THE CASTLEVANIA ARCHIVE</h1>
+
+            <p>
+                Enter the world of Castlevania.
+                Explore the games, characters, creatures,
+                locations, weapons, history and legends
+                contained within the series.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             CASTLEVANIA GAMES
+             ===================================================== -->
+
+        <h2 class="section-title">
+            THE GAMES
+        </h2>
+
+
+        <div class="game-grid">
+
+
+            <!-- CASTLEVANIA -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/castlevania.jpg"
+                    alt="Castlevania">
+
+                <div class="game-title">
+                    Castlevania
+                </div>
+
+            </a>
+
+
+            <!-- VAMPIRE KILLER -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/vampire-killer.jpg"
+                    alt="Vampire Killer">
+
+                <div class="game-title">
+                    Vampire Killer
+                </div>
+
+            </a>
+
+
+            <!-- CASTLEVANIA II -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/castlevania-ii.jpg"
+                    alt="Castlevania II: Simon's Quest">
+
+                <div class="game-title">
+                    Castlevania II:<br>
+                    Simon's Quest
+                </div>
+
+            </a>
+
+
+            <!-- CASTLEVANIA III -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/castlevania-iii.jpg"
+                    alt="Castlevania III: Dracula's Curse">
+
+                <div class="game-title">
+                    Castlevania III:<br>
+                    Dracula's Curse
+                </div>
+
+            </a>
+
+
+            <!-- SUPER CASTLEVANIA IV -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/super-castlevania-iv.jpg"
+                    alt="Super Castlevania IV">
+
+                <div class="game-title">
+                    Super Castlevania IV
+                </div>
+
+            </a>
+
+
+            <!-- CASTLEVANIA BLOODLINES -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/bloodlines.jpg"
+                    alt="Castlevania Bloodlines">
+
+                <div class="game-title">
+                    Castlevania:<br>
+                    Bloodlines
+                </div>
+
+            </a>
+
+
+            <!-- BELMONT'S REVENGE -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/belmonts-revenge.jpg"
+                    alt="Castlevania II: Belmont's Revenge">
+
+                <div class="game-title">
+                    Castlevania II:<br>
+                    Belmont's Revenge
+                </div>
+
+            </a>
+
+
+            <!-- CIRCLE OF THE MOON -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/circle-of-the-moon.jpg"
+                    alt="Castlevania: Circle of the Moon">
+
+                <div class="game-title">
+                    Castlevania:<br>
+                    Circle of the Moon
+                </div>
+
+            </a>
+
+
+            <!-- SYMPHONY OF THE NIGHT -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/symphony-of-the-night.jpg"
+                    alt="Castlevania: Symphony of the Night">
+
+                <div class="game-title">
+                    Castlevania:<br>
+                    Symphony of the Night
+                </div>
+
+            </a>
+
+
+            <!-- ARIA OF SORROW -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/aria-of-sorrow.jpg"
+                    alt="Castlevania: Aria of Sorrow">
+
+                <div class="game-title">
+                    Castlevania:<br>
+                    Aria of Sorrow
+                </div>
+
+            </a>
+
+
+            <!-- DAWN OF SORROW -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    class="game-card"
+                    src="images/games/dawn-of-sorrow.jpg"
+                    alt="Castlevania: Dawn of Sorrow">
+
+                <div class="game-title">
+                    Castlevania:<br>
+                    Dawn of Sorrow
+                </div>
+
+            </a>
+
+
+            <!-- PORTRAIT OF RUIN -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/portrait-of-ruin.jpg"
+                    alt="Castlevania: Portrait of Ruin">
+
+                <div class="game-title">
+                    Castlevania:<br>
+                    Portrait of Ruin
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+
+        <p>
+            THE VIDEO GAME CEMETERY
+        </p>
+
+        <p>
+            Castlevania Archive
+        </p>
+
+    </footer>
+
+
+</body>
+  </html>
