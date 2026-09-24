@@ -34,11 +34,8 @@
 
         body {
             margin: 0;
-
             background-color: #000;
-
             color: #d6d6d6;
-
             font-family: "Early GameBoy", monospace;
         }
 
@@ -57,6 +54,8 @@
 
             width: 100%;
             height: 100%;
+
+            background-color: #000;
 
             background-image:
                 linear-gradient(
@@ -78,13 +77,10 @@
            ========================================================= */
 
         .logo-banner {
-
             width: 100%;
-
             min-height: 180px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
@@ -97,7 +93,6 @@
 
 
         .logo-banner img {
-
             display: block;
 
             max-width: 90%;
@@ -113,7 +108,6 @@
            ========================================================= */
 
         nav {
-
             width: 100%;
 
             background: rgba(0, 0, 0, 0.92);
@@ -123,16 +117,13 @@
 
 
         nav ul {
-
             list-style: none;
 
             margin: 0;
             padding: 0;
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
             flex-wrap: wrap;
@@ -140,13 +131,11 @@
 
 
         nav li {
-
             margin: 0;
         }
 
 
         nav a {
-
             display: block;
 
             padding: 16px 24px;
@@ -166,15 +155,12 @@
 
 
         nav li:last-child a {
-
             border-right: 1px solid #222;
         }
 
 
         nav a:hover {
-
             background: #222;
-
             color: #fff;
         }
 
@@ -184,9 +170,7 @@
            ========================================================= */
 
         main {
-
             width: 100%;
-
             max-width: 1400px;
 
             margin: auto;
@@ -200,7 +184,6 @@
            ========================================================= */
 
         .intro {
-
             max-width: 900px;
 
             margin: 0 auto 60px;
@@ -216,7 +199,6 @@
 
 
         .intro h1 {
-
             margin-top: 0;
 
             color: #fff;
@@ -228,7 +210,6 @@
 
 
         .intro p {
-
             color: #bbb;
 
             line-height: 1.8;
@@ -242,7 +223,6 @@
            ========================================================= */
 
         .section-title {
-
             margin: 60px 0 30px;
 
             text-align: center;
@@ -260,7 +240,6 @@
            ========================================================= */
 
         .game-grid {
-
             display: grid;
 
             grid-template-columns:
@@ -275,7 +254,6 @@
            ========================================================= */
 
         .game-card {
-
             display: block;
 
             background: rgba(10, 10, 10, 0.92);
@@ -296,7 +274,6 @@
 
 
         .game-card:hover {
-
             transform: translateY(-5px);
 
             border-color: #888;
@@ -310,7 +287,6 @@
            ========================================================= */
 
         .game-card img {
-
             width: 100%;
 
             aspect-ratio: 3 / 4;
@@ -330,13 +306,11 @@
            ========================================================= */
 
         .game-title {
-
             min-height: 70px;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             padding: 15px;
@@ -356,7 +330,6 @@
            ========================================================= */
 
         footer {
-
             padding: 35px;
 
             text-align: center;
@@ -378,35 +351,28 @@
         @media (max-width: 600px) {
 
             .logo-banner {
-
                 min-height: 130px;
-
                 padding: 20px;
             }
 
 
             .logo-banner img {
-
                 max-height: 90px;
             }
 
 
             nav a {
-
                 padding: 13px 14px;
-
                 font-size: 11px;
             }
 
 
             main {
-
                 padding: 30px 15px 60px;
             }
 
 
             .game-grid {
-
                 grid-template-columns:
                     repeat(2, minmax(0, 1fr));
 
@@ -415,7 +381,6 @@
 
 
             .game-title {
-
                 font-size: 12px;
 
                 min-height: 60px;
@@ -437,11 +402,10 @@
 
     <header class="logo-banner">
 
-        <!-- Replace this filename with the actual logo image -->
         <img
             src="images/castlevania-logo.png"
             alt="Castlevania">
-            
+
     </header>
 
 
@@ -489,7 +453,9 @@
     <main>
 
 
-        <!-- INTRO -->
+        <!-- =====================================================
+             INTRODUCTION
+             ===================================================== -->
 
         <section class="intro">
 
@@ -517,7 +483,10 @@
         <div class="game-grid">
 
 
-            <!-- CASTLEVANIA -->
+            <!-- =================================================
+                 1986
+                 CASTLEVANIA
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -532,7 +501,10 @@
             </a>
 
 
-            <!-- VAMPIRE KILLER -->
+            <!-- =================================================
+                 1986
+                 VAMPIRE KILLER
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -547,7 +519,10 @@
             </a>
 
 
-            <!-- CASTLEVANIA II -->
+            <!-- =================================================
+                 1987
+                 CASTLEVANIA II: SIMON'S QUEST
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -563,7 +538,10 @@
             </a>
 
 
-            <!-- CASTLEVANIA III -->
+            <!-- =================================================
+                 1989
+                 CASTLEVANIA III: DRACULA'S CURSE
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -579,7 +557,29 @@
             </a>
 
 
-            <!-- SUPER CASTLEVANIA IV -->
+            <!-- =================================================
+                 1989
+                 CASTLEVANIA: THE ADVENTURE
+                 ================================================= -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/castlevania-the-adventure.jpg"
+                    alt="Castlevania: The Adventure">
+
+                <div class="game-title">
+                    Castlevania:<br>
+                    The Adventure
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 1991
+                 SUPER CASTLEVANIA IV
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -594,23 +594,10 @@
             </a>
 
 
-            <!-- CASTLEVANIA BLOODLINES -->
-
-            <a class="game-card" href="#">
-
-                <img
-                    src="images/games/bloodlines.jpg"
-                    alt="Castlevania Bloodlines">
-
-                <div class="game-title">
-                    Castlevania:<br>
-                    Bloodlines
-                </div>
-
-            </a>
-
-
-            <!-- BELMONT'S REVENGE -->
+            <!-- =================================================
+                 1991
+                 CASTLEVANIA II: BELMONT'S REVENGE
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -626,23 +613,48 @@
             </a>
 
 
-            <!-- CIRCLE OF THE MOON -->
+            <!-- =================================================
+                 1994
+                 CASTLEVANIA: BLOODLINES
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
                 <img
-                    src="images/games/circle-of-the-moon.jpg"
-                    alt="Castlevania: Circle of the Moon">
+                    src="images/games/bloodlines.jpg"
+                    alt="Castlevania Bloodlines">
 
                 <div class="game-title">
                     Castlevania:<br>
-                    Circle of the Moon
+                    Bloodlines
                 </div>
 
             </a>
 
 
-            <!-- SYMPHONY OF THE NIGHT -->
+            <!-- =================================================
+                 1997
+                 CASTLEVANIA LEGENDS
+                 ================================================= -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/castlevania-legends.jpg"
+                    alt="Castlevania Legends">
+
+                <div class="game-title">
+                    Castlevania<br>
+                    Legends
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 1997
+                 CASTLEVANIA: SYMPHONY OF THE NIGHT
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -658,7 +670,29 @@
             </a>
 
 
-            <!-- ARIA OF SORROW -->
+            <!-- =================================================
+                 2001
+                 CASTLEVANIA: CIRCLE OF THE MOON
+                 ================================================= -->
+
+            <a class="game-card" href="#">
+
+                <img
+                    src="images/games/circle-of-the-moon.jpg"
+                    alt="Castlevania: Circle of the Moon">
+
+                <div class="game-title">
+                    Castlevania:<br>
+                    Circle of the Moon
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 2003
+                 CASTLEVANIA: ARIA OF SORROW
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -674,12 +708,14 @@
             </a>
 
 
-            <!-- DAWN OF SORROW -->
+            <!-- =================================================
+                 2005
+                 CASTLEVANIA: DAWN OF SORROW
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
                 <img
-                    class="game-card"
                     src="images/games/dawn-of-sorrow.jpg"
                     alt="Castlevania: Dawn of Sorrow">
 
@@ -691,7 +727,10 @@
             </a>
 
 
-            <!-- PORTRAIT OF RUIN -->
+            <!-- =================================================
+                 2006
+                 CASTLEVANIA: PORTRAIT OF RUIN
+                 ================================================= -->
 
             <a class="game-card" href="#">
 
@@ -731,4 +770,4 @@
 
 
 </body>
-  </html>
+</html>
