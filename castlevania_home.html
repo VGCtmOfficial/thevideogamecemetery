@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Castlevania | The Video Game Cemetery</title>
+
 
     <style>
 
@@ -21,7 +24,7 @@
 
 
         /* =========================================================
-           BASIC PAGE SETTINGS
+           BASIC SETTINGS
            ========================================================= */
 
         * {
@@ -34,17 +37,21 @@
 
         body {
             margin: 0;
-            background-color: #000;
+
+            background: #000;
+
             color: #d6d6d6;
+
             font-family: "Early GameBoy", monospace;
         }
 
 
         /* =========================================================
-           CASTLEVANIA BACKGROUND
+           BACKGROUND
            ========================================================= */
 
         body::before {
+
             content: "";
 
             position: fixed;
@@ -60,7 +67,7 @@
             background-image:
                 linear-gradient(
                     rgba(0, 0, 0, 0.35),
-                    rgba(0, 0, 0, 0.75)
+                    rgba(0, 0, 0, 0.80)
                 ),
                 url("images/castlevaniabg.png");
 
@@ -73,26 +80,30 @@
 
 
         /* =========================================================
-           LOGO BANNER
+           LOGO
            ========================================================= */
 
         .logo-banner {
+
             width: 100%;
+
             min-height: 180px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             padding: 30px;
 
-            background-color: #000;
+            background: #000;
 
             border-bottom: 2px solid #333;
         }
 
 
         .logo-banner img {
+
             display: block;
 
             max-width: 90%;
@@ -108,15 +119,17 @@
            ========================================================= */
 
         nav {
+
             width: 100%;
 
-            background: rgba(0, 0, 0, 0.92);
+            background: rgba(0, 0, 0, 0.94);
 
             border-bottom: 1px solid #444;
         }
 
 
         nav ul {
+
             list-style: none;
 
             margin: 0;
@@ -125,27 +138,24 @@
             display: flex;
 
             justify-content: center;
+
             align-items: center;
 
             flex-wrap: wrap;
         }
 
 
-        nav li {
-            margin: 0;
-        }
-
-
         nav a {
+
             display: block;
 
-            padding: 16px 24px;
+            padding: 16px 22px;
 
             color: #d6d6d6;
 
             text-decoration: none;
 
-            font-size: 14px;
+            font-size: 13px;
 
             border-left: 1px solid #222;
 
@@ -156,22 +166,27 @@
 
 
         nav li:last-child a {
+
             border-right: 1px solid #222;
         }
 
 
         nav a:hover {
+
             background: #222;
+
             color: #fff;
         }
 
 
         /* =========================================================
-           MAIN CONTENT
+           MAIN
            ========================================================= */
 
         main {
+
             width: 100%;
+
             max-width: 1400px;
 
             margin: auto;
@@ -185,13 +200,14 @@
            ========================================================= */
 
         .intro {
+
             max-width: 900px;
 
-            margin: 0 auto 60px;
+            margin: 0 auto 70px;
 
-            padding: 30px;
+            padding: 35px;
 
-            background: rgba(0, 0, 0, 0.82);
+            background: rgba(0, 0, 0, 0.84);
 
             border: 1px solid #444;
 
@@ -200,6 +216,7 @@
 
 
         .intro h1 {
+
             margin-top: 0;
 
             color: #fff;
@@ -211,6 +228,7 @@
 
 
         .intro p {
+
             color: #bbb;
 
             line-height: 1.8;
@@ -220,29 +238,72 @@
 
 
         /* =========================================================
-           SECTION TITLES
+           SECTION INTRODUCTION
+           ========================================================= */
+
+        .section-intro {
+
+            max-width: 850px;
+
+            margin: 0 auto 30px;
+
+            text-align: center;
+        }
+
+
+        .section-intro p {
+
+            color: #aaa;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           SECTION HEADINGS
            ========================================================= */
 
         .section-title {
-            margin: 60px 0 30px;
+
+            margin: 70px 0 15px;
 
             text-align: center;
 
             color: #fff;
 
-            font-size: 28px;
+            font-size: 30px;
 
             letter-spacing: 2px;
+        }
+
+
+        .section-subtitle {
+
+            margin: 0 0 35px;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
         }
 
 
         /* =========================================================
            GAME GRID
            
-           Cards now flow LEFT → RIGHT automatically.
+           LEFT → RIGHT
+           
+           The cards automatically fill each row from left to
+           right. There is NO forced two-column mobile layout.
            ========================================================= */
 
         .game-grid {
+
             display: grid;
 
             grid-template-columns:
@@ -259,9 +320,10 @@
            ========================================================= */
 
         .game-card {
+
             display: block;
 
-            background: rgba(10, 10, 10, 0.92);
+            background: rgba(8, 8, 8, 0.94);
 
             border: 1px solid #3b3b3b;
 
@@ -279,11 +341,12 @@
 
 
         .game-card:hover {
+
             transform: translateY(-5px);
 
             border-color: #888;
 
-            background: rgba(25, 25, 25, 0.96);
+            background: rgba(25, 25, 25, 0.97);
         }
 
 
@@ -292,6 +355,7 @@
            ========================================================= */
 
         .game-card img {
+
             width: 100%;
 
             aspect-ratio: 3 / 4;
@@ -311,22 +375,96 @@
            ========================================================= */
 
         .game-title {
-            min-height: 70px;
+
+            min-height: 75px;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            padding: 15px;
+            padding: 14px;
 
             text-align: center;
 
             color: #fff;
 
-            font-size: 15px;
+            font-size: 14px;
 
             line-height: 1.5;
+        }
+
+
+        /* =========================================================
+           TIMELINE CARD DIFFERENCE
+           ========================================================= */
+
+        .timeline-card {
+
+            background: rgba(12, 12, 12, 0.96);
+        }
+
+
+        .timeline-year {
+
+            display: block;
+
+            padding-top: 10px;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================================
+           TIMELINE NOTE
+           ========================================================= */
+
+        .timeline-note {
+
+            max-width: 900px;
+
+            margin: 40px auto 0;
+
+            padding: 25px;
+
+            background: rgba(0, 0, 0, 0.78);
+
+            border: 1px solid #333;
+
+            text-align: center;
+        }
+
+
+        .timeline-note p {
+
+            margin: 0;
+
+            color: #999;
+
+            line-height: 1.7;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           SEPARATE CONTINUITY
+           ========================================================= */
+
+        .continuity {
+
+            margin-top: 70px;
+
+            padding-top: 50px;
+
+            border-top: 1px solid #333;
         }
 
 
@@ -335,11 +473,12 @@
            ========================================================= */
 
         footer {
-            padding: 35px;
+
+            padding: 40px;
 
             text-align: center;
 
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.96);
 
             border-top: 1px solid #333;
 
@@ -350,52 +489,81 @@
 
 
         /* =========================================================
-           SMALL SCREENS
+           MOBILE
            
-           We deliberately DO NOT force the catalogue into
-           two columns. The grid automatically determines
-           how many cards fit.
+           No forced two-column catalogue.
+           The grid continues to flow naturally.
            ========================================================= */
 
         @media (max-width: 600px) {
 
             .logo-banner {
+
                 min-height: 130px;
+
                 padding: 20px;
             }
 
 
             .logo-banner img {
+
                 max-height: 90px;
             }
 
 
             nav a {
-                padding: 13px 14px;
-                font-size: 11px;
+
+                padding: 12px 13px;
+
+                font-size: 10px;
             }
 
 
             main {
+
                 padding: 30px 15px 60px;
             }
 
 
+            .intro {
+
+                padding: 25px;
+            }
+
+
+            .intro h1 {
+
+                font-size: 24px;
+            }
+
+
             .game-grid {
+
                 gap: 15px;
+
+                grid-template-columns:
+                    repeat(auto-fill, minmax(145px, 1fr));
             }
 
 
             .game-title {
-                font-size: 12px;
 
-                min-height: 60px;
+                min-height: 65px;
 
-                padding: 10px;
+                padding: 9px;
+
+                font-size: 11px;
+            }
+
+
+            .section-title {
+
+                font-size: 24px;
             }
         }
 
     </style>
+
 </head>
 
 
@@ -403,7 +571,7 @@
 
 
     <!-- =========================================================
-         CASTLEVANIA LOGO BANNER
+         CASTLEVANIA LOGO
          ========================================================= -->
 
     <header class="logo-banner">
@@ -428,7 +596,7 @@
             </li>
 
             <li>
-                <a href="#">GAMES</a>
+                <a href="#release-order">GAMES</a>
             </li>
 
             <li>
@@ -444,7 +612,7 @@
             </li>
 
             <li>
-                <a href="#">HISTORY</a>
+                <a href="#timeline">TIMELINE</a>
             </li>
 
         </ul>
@@ -453,7 +621,7 @@
 
 
     <!-- =========================================================
-         MAIN CONTENT
+         MAIN
          ========================================================= -->
 
     <main>
@@ -465,254 +633,1061 @@
 
         <section class="intro">
 
-            <h1>THE CASTLEVANIA ARCHIVE</h1>
+            <h1>
+                THE CASTLEVANIA ARCHIVE
+            </h1>
 
             <p>
-                Enter the world of Castlevania.
-                Explore the games, characters, creatures,
-                locations, weapons, history and legends
-                contained within the series.
+                Explore the history of Castlevania —
+                its games, heroes, monsters, castles,
+                legends and stories.
+            </p>
+
+            <p>
+                The archive separates the series' release
+                history from its fictional chronology,
+                allowing every important game to be preserved
+                without confusing release order with story order.
             </p>
 
         </section>
 
 
+
         <!-- =====================================================
-             THE GAMES
+             RELEASE ORDER
              ===================================================== -->
 
-        <h2 class="section-title">
-            THE GAMES
-        </h2>
+        <section id="release-order">
 
+            <h2 class="section-title">
+                RELEASE ORDER
+            </h2>
 
-        <div class="game-grid">
+            <p class="section-subtitle">
+                THE GAMES AS THEY WERE RELEASED
+            </p>
 
+            <div class="section-intro">
 
-            <!-- 1986 -->
+                <p>
+                    This catalogue follows the history of the
+                    Castlevania games by original release.
+                    Games do not have to belong to the main
+                    fictional timeline to appear here.
+                </p>
 
-            <a class="game-card" href="#">
+            </div>
 
-                <img
-                    src="images/games/castlevania.jpg"
-                    alt="Castlevania">
 
-                <div class="game-title">
-                    Castlevania
-                </div>
+            <div class="game-grid">
 
-            </a>
 
+                <!-- 1986 -->
 
-            <!-- 1986 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/castlevania.jpg"
+                        alt="Castlevania">
 
-                <img
-                    src="images/games/vampire-killer.jpg"
-                    alt="Vampire Killer">
+                    <div class="game-title">
+                        Castlevania
+                    </div>
 
-                <div class="game-title">
-                    Vampire Killer
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1986 -->
 
-            <!-- 1987 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/vampire-killer.jpg"
+                        alt="Vampire Killer">
 
-                <img
-                    src="images/games/castlevania-ii.jpg"
-                    alt="Castlevania II: Simon's Quest">
+                    <div class="game-title">
+                        Vampire Killer
+                    </div>
 
-                <div class="game-title">
-                    Castlevania II:<br>
-                    Simon's Quest
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1987 -->
 
-            <!-- 1989 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/haunted-castle.jpg"
+                        alt="Haunted Castle">
 
-                <img
-                    src="images/games/castlevania-iii.jpg"
-                    alt="Castlevania III: Dracula's Curse">
+                    <div class="game-title">
+                        Haunted Castle
+                    </div>
 
-                <div class="game-title">
-                    Castlevania III:<br>
-                    Dracula's Curse
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1987 -->
 
-            <!-- 1989 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/castlevania-ii.jpg"
+                        alt="Castlevania II Simon's Quest">
 
-                <img
-                    src="images/games/castlevania-the-adventure.jpg"
-                    alt="Castlevania: The Adventure">
+                    <div class="game-title">
+                        Castlevania II:<br>
+                        Simon's Quest
+                    </div>
 
-                <div class="game-title">
-                    Castlevania:<br>
-                    The Adventure
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1989 -->
 
-            <!-- 1991 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/castlevania-the-adventure.jpg"
+                        alt="Castlevania The Adventure">
 
-                <img
-                    src="images/games/super-castlevania-iv.jpg"
-                    alt="Super Castlevania IV">
+                    <div class="game-title">
+                        Castlevania:<br>
+                        The Adventure
+                    </div>
 
-                <div class="game-title">
-                    Super Castlevania IV
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1990 -->
 
-            <!-- 1991 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/castlevania-iii.jpg"
+                        alt="Castlevania III Dracula's Curse">
 
-                <img
-                    src="images/games/belmonts-revenge.jpg"
-                    alt="Castlevania II: Belmont's Revenge">
+                    <div class="game-title">
+                        Castlevania III:<br>
+                        Dracula's Curse
+                    </div>
 
-                <div class="game-title">
-                    Castlevania II:<br>
-                    Belmont's Revenge
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1991 -->
 
-            <!-- 1994 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/belmonts-revenge.jpg"
+                        alt="Castlevania II Belmont's Revenge">
 
-                <img
-                    src="images/games/bloodlines.jpg"
-                    alt="Castlevania Bloodlines">
+                    <div class="game-title">
+                        Castlevania II:<br>
+                        Belmont's Revenge
+                    </div>
 
-                <div class="game-title">
-                    Castlevania:<br>
-                    Bloodlines
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1991 -->
 
-            <!-- 1997 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/super-castlevania-iv.jpg"
+                        alt="Super Castlevania IV">
 
-                <img
-                    src="images/games/castlevania-legends.jpg"
-                    alt="Castlevania Legends">
+                    <div class="game-title">
+                        Super Castlevania IV
+                    </div>
 
-                <div class="game-title">
-                    Castlevania<br>
-                    Legends
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1993 -->
 
-            <!-- 1997 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/rondo-of-blood.jpg"
+                        alt="Castlevania Rondo of Blood">
 
-                <img
-                    src="images/games/symphony-of-the-night.jpg"
-                    alt="Castlevania: Symphony of the Night">
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Rondo of Blood
+                    </div>
 
-                <div class="game-title">
-                    Castlevania:<br>
-                    Symphony of the Night
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1993 -->
 
-            <!-- 2001 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/akumajo-dracula-x68000.jpg"
+                        alt="Akumajo Dracula X68000">
 
-                <img
-                    src="images/games/circle-of-the-moon.jpg"
-                    alt="Castlevania: Circle of the Moon">
+                    <div class="game-title">
+                        Akumajō Dracula<br>
+                        X68000
+                    </div>
 
-                <div class="game-title">
-                    Castlevania:<br>
-                    Circle of the Moon
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1994 -->
 
-            <!-- 2003 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/bloodlines.jpg"
+                        alt="Castlevania Bloodlines">
 
-                <img
-                    src="images/games/aria-of-sorrow.jpg"
-                    alt="Castlevania: Aria of Sorrow">
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Bloodlines
+                    </div>
 
-                <div class="game-title">
-                    Castlevania:<br>
-                    Aria of Sorrow
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1995 -->
 
-            <!-- 2005 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/dracula-x.jpg"
+                        alt="Castlevania Dracula X">
 
-                <img
-                    src="images/games/dawn-of-sorrow.jpg"
-                    alt="Castlevania: Dawn of Sorrow">
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Dracula X
+                    </div>
 
-                <div class="game-title">
-                    Castlevania:<br>
-                    Dawn of Sorrow
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1997 -->
 
-            <!-- 2006 -->
+                <a class="game-card" href="#">
 
-            <a class="game-card" href="#">
+                    <img
+                        src="images/games/symphony-of-the-night.jpg"
+                        alt="Castlevania Symphony of the Night">
 
-                <img
-                    src="images/games/portrait-of-ruin.jpg"
-                    alt="Castlevania: Portrait of Ruin">
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Symphony of the Night
+                    </div>
 
-                <div class="game-title">
-                    Castlevania:<br>
-                    Portrait of Ruin
-                </div>
+                </a>
 
-            </a>
 
+                <!-- 1998 -->
 
-        </div>
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/castlevania-legends.jpg"
+                        alt="Castlevania Legends">
+
+                    <div class="game-title">
+                        Castlevania<br>
+                        Legends
+                    </div>
+
+                </a>
+
+
+                <!-- 1998 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/castlevania-64.jpg"
+                        alt="Castlevania Nintendo 64">
+
+                    <div class="game-title">
+                        Castlevania
+                    </div>
+
+                </a>
+
+
+                <!-- 1999 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/legacy-of-darkness.jpg"
+                        alt="Castlevania Legacy of Darkness">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Legacy of Darkness
+                    </div>
+
+                </a>
+
+
+                <!-- 2001 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/circle-of-the-moon.jpg"
+                        alt="Castlevania Circle of the Moon">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Circle of the Moon
+                    </div>
+
+                </a>
+
+
+                <!-- 2001 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/castlevania-chronicles.jpg"
+                        alt="Castlevania Chronicles">
+
+                    <div class="game-title">
+                        Castlevania<br>
+                        Chronicles
+                    </div>
+
+                </a>
+
+
+                <!-- 2002 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/harmony-of-dissonance.jpg"
+                        alt="Castlevania Harmony of Dissonance">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Harmony of Dissonance
+                    </div>
+
+                </a>
+
+
+                <!-- 2003 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/aria-of-sorrow.jpg"
+                        alt="Castlevania Aria of Sorrow">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Aria of Sorrow
+                    </div>
+
+                </a>
+
+
+                <!-- 2003 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/lament-of-innocence.jpg"
+                        alt="Castlevania Lament of Innocence">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Lament of Innocence
+                    </div>
+
+                </a>
+
+
+                <!-- 2005 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/dawn-of-sorrow.jpg"
+                        alt="Castlevania Dawn of Sorrow">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Dawn of Sorrow
+                    </div>
+
+                </a>
+
+
+                <!-- 2005 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/curse-of-darkness.jpg"
+                        alt="Castlevania Curse of Darkness">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Curse of Darkness
+                    </div>
+
+                </a>
+
+
+                <!-- 2006 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/portrait-of-ruin.jpg"
+                        alt="Castlevania Portrait of Ruin">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Portrait of Ruin
+                    </div>
+
+                </a>
+
+
+                <!-- 2007 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/order-of-shadows.jpg"
+                        alt="Castlevania Order of Shadows">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Order of Shadows
+                    </div>
+
+                </a>
+
+
+                <!-- 2007 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/dracula-x-chronicles.jpg"
+                        alt="Castlevania The Dracula X Chronicles">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        The Dracula X Chronicles
+                    </div>
+
+                </a>
+
+
+                <!-- 2008 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/order-of-ecclesia.jpg"
+                        alt="Castlevania Order of Ecclesia">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Order of Ecclesia
+                    </div>
+
+                </a>
+
+
+                <!-- 2008 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/judgment.jpg"
+                        alt="Castlevania Judgment">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Judgment
+                    </div>
+
+                </a>
+
+
+                <!-- 2009 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/adventure-rebirth.jpg"
+                        alt="Castlevania The Adventure ReBirth">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        The Adventure ReBirth
+                    </div>
+
+                </a>
+
+
+                <!-- 2009 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/castlevania-arcade.jpg"
+                        alt="Castlevania The Arcade">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        The Arcade
+                    </div>
+
+                </a>
+
+
+                <!-- 2010 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/harmony-of-despair.jpg"
+                        alt="Castlevania Harmony of Despair">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Harmony of Despair
+                    </div>
+
+                </a>
+
+
+                <!-- 2010 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/lords-of-shadow.jpg"
+                        alt="Castlevania Lords of Shadow">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Lords of Shadow
+                    </div>
+
+                </a>
+
+
+                <!-- 2011 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/encore-of-the-night.jpg"
+                        alt="Castlevania Encore of the Night">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Encore of the Night
+                    </div>
+
+                </a>
+
+
+                <!-- 2013 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/mirror-of-fate.jpg"
+                        alt="Castlevania Lords of Shadow Mirror of Fate">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Mirror of Fate
+                    </div>
+
+                </a>
+
+
+                <!-- 2014 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/lords-of-shadow-2.jpg"
+                        alt="Castlevania Lords of Shadow 2">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Lords of Shadow 2
+                    </div>
+
+                </a>
+
+
+                <!-- 2021 -->
+
+                <a class="game-card" href="#">
+
+                    <img
+                        src="images/games/grimoire-of-souls.jpg"
+                        alt="Castlevania Grimoire of Souls">
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Grimoire of Souls
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TIMELINE
+             ===================================================== -->
+
+        <section id="timeline">
+
+            <h2 class="section-title">
+                CASTLEVANIA TIMELINE
+            </h2>
+
+            <p class="section-subtitle">
+                THE STORY OF THE MAIN UNIVERSE
+            </p>
+
+            <div class="section-intro">
+
+                <p>
+                    This section is arranged according to the
+                    fictional chronology of the main Castlevania
+                    continuity, rather than the order in which
+                    the games were released.
+                </p>
+
+                <p>
+                    Not every Castlevania release belongs to this
+                    continuity. Games such as Haunted Castle,
+                    Castlevania Legends and the Lords of Shadow
+                    trilogy are therefore kept separate rather
+                    than being forced into the main timeline.
+                </p>
+
+            </div>
+
+
+            <div class="game-grid">
+
+
+                <!-- 1094 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/lament-of-innocence.jpg"
+                        alt="Castlevania Lament of Innocence">
+
+                    <span class="timeline-year">
+                        1094
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Lament of Innocence
+                    </div>
+
+                </a>
+
+
+                <!-- 1476 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/curse-of-darkness.jpg"
+                        alt="Castlevania Curse of Darkness">
+
+                    <span class="timeline-year">
+                        1476
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Curse of Darkness
+                    </div>
+
+                </a>
+
+
+                <!-- 1576 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/castlevania-the-adventure.jpg"
+                        alt="Castlevania The Adventure">
+
+                    <span class="timeline-year">
+                        1576
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        The Adventure
+                    </div>
+
+                </a>
+
+
+                <!-- 1591 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/belmonts-revenge.jpg"
+                        alt="Castlevania II Belmont's Revenge">
+
+                    <span class="timeline-year">
+                        1591
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania II:<br>
+                        Belmont's Revenge
+                    </div>
+
+                </a>
+
+
+                <!-- 1691 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/castlevania.jpg"
+                        alt="Castlevania">
+
+                    <span class="timeline-year">
+                        1691
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania
+                    </div>
+
+                </a>
+
+
+                <!-- 1698 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/castlevania-ii.jpg"
+                        alt="Castlevania II Simon's Quest">
+
+                    <span class="timeline-year">
+                        1698
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania II:<br>
+                        Simon's Quest
+                    </div>
+
+                </a>
+
+
+                <!-- 1748 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/harmony-of-dissonance.jpg"
+                        alt="Castlevania Harmony of Dissonance">
+
+                    <span class="timeline-year">
+                        1748
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Harmony of Dissonance
+                    </div>
+
+                </a>
+
+
+                <!-- 1792 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/rondo-of-blood.jpg"
+                        alt="Castlevania Rondo of Blood">
+
+                    <span class="timeline-year">
+                        1792
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Rondo of Blood
+                    </div>
+
+                </a>
+
+
+                <!-- 1797 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/symphony-of-the-night.jpg"
+                        alt="Castlevania Symphony of the Night">
+
+                    <span class="timeline-year">
+                        1797
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Symphony of the Night
+                    </div>
+
+                </a>
+
+
+                <!-- 1800 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/order-of-ecclesia.jpg"
+                        alt="Castlevania Order of Ecclesia">
+
+                    <span class="timeline-year">
+                        Early 19th Century
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Order of Ecclesia
+                    </div>
+
+                </a>
+
+
+                <!-- 1917 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/bloodlines.jpg"
+                        alt="Castlevania Bloodlines">
+
+                    <span class="timeline-year">
+                        1917
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Bloodlines
+                    </div>
+
+                </a>
+
+
+                <!-- 1944 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/portrait-of-ruin.jpg"
+                        alt="Castlevania Portrait of Ruin">
+
+                    <span class="timeline-year">
+                        1944
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Portrait of Ruin
+                    </div>
+
+                </a>
+
+
+                <!-- 2035 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/aria-of-sorrow.jpg"
+                        alt="Castlevania Aria of Sorrow">
+
+                    <span class="timeline-year">
+                        2035
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Aria of Sorrow
+                    </div>
+
+                </a>
+
+
+                <!-- 2036 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/dawn-of-sorrow.jpg"
+                        alt="Castlevania Dawn of Sorrow">
+
+                    <span class="timeline-year">
+                        2036
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Dawn of Sorrow
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+            <div class="timeline-note">
+
+                <p>
+                    The timeline is deliberately separate from
+                    the release catalogue. A game may therefore
+                    appear in both sections, but its position in
+                    each section can be completely different.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LORDS OF SHADOW CONTINUITY
+             ===================================================== -->
+
+        <section class="continuity">
+
+            <h2 class="section-title">
+                LORDS OF SHADOW TIMELINE
+            </h2>
+
+            <p class="section-subtitle">
+                A SEPARATE CASTLEVANIA CONTINUITY
+            </p>
+
+            <div class="section-intro">
+
+                <p>
+                    The Lords of Shadow games form a separate
+                    continuity from the main Castlevania timeline.
+                </p>
+
+            </div>
+
+
+            <div class="game-grid">
+
+
+                <!-- 2010 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/lords-of-shadow.jpg"
+                        alt="Castlevania Lords of Shadow">
+
+                    <span class="timeline-year">
+                        Lords of Shadow
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Lords of Shadow
+                    </div>
+
+                </a>
+
+
+                <!-- 2013 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/mirror-of-fate.jpg"
+                        alt="Castlevania Lords of Shadow Mirror of Fate">
+
+                    <span class="timeline-year">
+                        Lords of Shadow
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Mirror of Fate
+                    </div>
+
+                </a>
+
+
+                <!-- 2014 -->
+
+                <a class="game-card timeline-card" href="#">
+
+                    <img
+                        src="images/games/lords-of-shadow-2.jpg"
+                        alt="Castlevania Lords of Shadow 2">
+
+                    <span class="timeline-year">
+                        Lords of Shadow
+                    </span>
+
+                    <div class="game-title">
+                        Castlevania:<br>
+                        Lords of Shadow 2
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
 
     </main>
+
 
 
     <!-- =========================================================
@@ -733,4 +1708,5 @@
 
 
 </body>
-</html>
+
+                        </html>
