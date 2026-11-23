@@ -11,7 +11,7 @@
     <style>
 
         /* =========================
-           FONT
+           FONTS
            ========================= */
 
         @font-face {
@@ -33,6 +33,10 @@
             margin: 0;
             background: #0d0d0d;
             color: #d6d6d6;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        h1, h2, h3, nav {
             font-family: 'Early GameBoy', monospace;
         }
 
@@ -67,6 +71,7 @@
             font-size: 20px;
             color: #bbb;
             font-style: italic;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         /* =========================
@@ -85,7 +90,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px 35px;
+            gap: 12px 25px;
             max-width: 1400px;
             margin: auto;
         }
@@ -147,18 +152,20 @@
         }
 
         .archive-card {
+            display: block;
             background: #181818;
             border: 1px solid #383838;
             text-decoration: none;
             color: inherit;
-            transition: 0.2s;
+            transition: 0.25s;
             overflow: hidden;
         }
 
         .archive-card:hover {
             transform: translateY(-5px);
-            border-color: #777;
+            border-color: #999;
             background: #202020;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
 
         .archive-image {
@@ -176,12 +183,12 @@
         .archive-content h3 {
             margin-top: 0;
             color: #fff;
-            font-size: 22px;
+            font-size: 20px;
         }
 
         .archive-content p {
             color: #aaa;
-            line-height: 1.5;
+            line-height: 1.7;
             font-size: 15px;
         }
 
@@ -206,11 +213,32 @@
             border: 1px solid #333;
             color: #ccc;
             text-decoration: none;
+            font-family: 'Early GameBoy', monospace;
+            font-size: 12px;
+            transition: 0.2s;
         }
 
         .catalogue-links a:hover {
             background: #292929;
             color: #fff;
+            border-color: #777;
+        }
+
+        /* =========================
+           FEATURED GAME
+           ========================= */
+
+        .featured-game {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .featured-game .archive-card {
+            width: 100%;
+        }
+
+        .featured-game .archive-image {
+            height: 300px;
         }
 
         /* =========================
@@ -243,6 +271,10 @@
             font-size: 14px;
         }
 
+        footer p:first-child {
+            font-family: 'Early GameBoy', monospace;
+        }
+
         /* =========================
            MOBILE
            ========================= */
@@ -264,7 +296,7 @@
             }
 
             h2 {
-                font-size: 24px;
+                font-size: 23px;
             }
 
             .welcome {
@@ -272,11 +304,19 @@
             }
 
             .nav-links {
-                gap: 10px 18px;
+                gap: 10px 15px;
             }
 
             .nav-links a {
-                font-size: 11px;
+                font-size: 10px;
+            }
+
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-game .archive-image {
+                height: 220px;
             }
 
         }
@@ -499,23 +539,28 @@
 
             <h2>From the Grave...</h2>
 
-            <div class="archive-card">
+            <div class="featured-game">
 
-                <img
-                    class="archive-image"
-                    src="images/spudsadventure/spudboxusa.png"
-                    alt="Spud's Adventure">
+                <a class="archive-card" href="#">
 
-                <div class="archive-content">
+                    <img
+                        class="archive-image"
+                        src="images/spudsadventure/spudboxusa.png"
+                        alt="Spud's Adventure">
 
-                    <h3>Spud's Adventure</h3>
+                    <div class="archive-content">
 
-                    <p>
-                        For the first time ever, a fully detailed information
-                        source for the classic Game Boy adventure RPG.
-                    </p>
+                        <h3>Spud's Adventure</h3>
 
-                </div>
+                        <p>
+                            For the first time ever, a fully detailed
+                            information source for the classic Game Boy
+                            adventure RPG.
+                        </p>
+
+                    </div>
+
+                </a>
 
             </div>
 
