@@ -1,18 +1,15 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>The Video Game Cemetery</title>
 
     <style>
-
         /* =========================
            FONTS
-           ========================= */
+        ========================= */
 
         @font-face {
             font-family: 'Early GameBoy';
@@ -23,7 +20,7 @@
 
         /* =========================
            GENERAL
-           ========================= */
+        ========================= */
 
         * {
             box-sizing: border-box;
@@ -31,58 +28,91 @@
 
         body {
             margin: 0;
-            background: #0d0d0d;
-            color: #d6d6d6;
+            color: #c9c3c9;
             font-family: Georgia, "Times New Roman", serif;
+            font-size: 14px;
+            line-height: 1.6;
+
+            /* Repeating side background */
+            background-color: #09080d;
+            background-image:
+                linear-gradient(rgba(5, 4, 10, 0.48), rgba(5, 4, 10, 0.48)),
+                url("images/cemetery-background.jpg");
+            background-repeat: repeat;
+            background-position: center top;
+            background-attachment: scroll;
         }
 
         h1, h2, h3, nav {
             font-family: 'Early GameBoy', monospace;
+            font-weight: normal;
+        }
+
+        a {
+            color: #c9b6d5;
+        }
+
+        /* =========================
+           CENTRAL WEBSITE FRAME
+        ========================= */
+
+        .site-shell {
+            width: 980px;
+            max-width: calc(100% - 36px);
+            margin: 25px auto;
+            background: #100e14;
+            border: 1px solid #514354;
+            box-shadow:
+                0 0 0 4px rgba(0, 0, 0, 0.65),
+                0 0 28px rgba(0, 0, 0, 0.9);
         }
 
         /* =========================
            HEADER / BANNER
-           ========================= */
+        ========================= */
 
         header {
-            min-height: 420px;
+            min-height: 275px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 60px 20px;
+            padding: 35px 20px;
 
             background:
-                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.8)),
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.72)),
                 url("images/banner.jpg") center/cover no-repeat;
 
-            border-bottom: 2px solid #333;
+            border-bottom: 3px double #65516c;
         }
 
         header h1 {
             margin: 0;
-            font-size: 60px;
-            color: #fff;
-            letter-spacing: 4px;
-            text-shadow: 3px 3px 8px #000;
+            font-size: 31px;
+            line-height: 1.7;
+            color: #eee5f0;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 5px #000;
         }
 
         header p {
-            font-size: 20px;
-            color: #bbb;
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: #d0c3d2;
             font-style: italic;
             font-family: Georgia, "Times New Roman", serif;
+            text-shadow: 2px 2px 4px #000;
         }
 
         /* =========================
-           NAVIGATION BAR
-           ========================= */
+           NAVIGATION
+        ========================= */
 
         nav {
-            background: #171717;
-            border-bottom: 2px solid #444;
-            border-top: 1px solid #333;
-            padding: 15px 20px;
+            padding: 10px 12px;
+            background: linear-gradient(#29212e, #17131c);
+            border-bottom: 3px double #66516d;
+            border-top: 1px solid #88718c;
         }
 
         .nav-links {
@@ -90,265 +120,324 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px 25px;
-            max-width: 1400px;
-            margin: auto;
+            gap: 5px 13px;
         }
 
         .nav-links a {
-            color: #bbb;
+            color: #c8b8ce;
             text-decoration: none;
-            font-size: 13px;
-            padding: 8px 5px;
+            font-size: 10px;
+            padding: 5px 4px;
             transition: 0.2s;
         }
 
         .nav-links a:hover {
             color: #fff;
-            text-shadow: 0 0 8px #aaa;
+            text-shadow: 0 0 7px #d8aaff;
         }
 
         /* =========================
            MAIN CONTENT
-           ========================= */
+        ========================= */
 
         main {
-            max-width: 1200px;
-            margin: auto;
-            padding: 50px 25px;
+            padding: 28px 28px 12px;
         }
 
         section {
-            margin-bottom: 70px;
+            margin-bottom: 38px;
         }
 
         h2 {
             text-align: center;
-            color: #eee;
-            font-size: 32px;
-            margin-bottom: 25px;
+            color: #d8c6df;
+            font-size: 17px;
+            letter-spacing: 1px;
+            margin: 0 0 17px;
+            padding: 0 0 10px;
+            border-bottom: 1px dotted #59465f;
+            text-shadow: 2px 2px 3px #000;
         }
 
         /* =========================
            WELCOME
-           ========================= */
+        ========================= */
 
         .welcome {
-            max-width: 850px;
+            max-width: 700px;
             margin: auto;
             text-align: center;
-            line-height: 1.8;
-            font-size: 18px;
+            line-height: 1.7;
+            font-size: 13px;
+            color: #bdb5c1;
+        }
+
+        .welcome p {
+            margin: 8px 0 12px;
         }
 
         /* =========================
            FEATURED ARCHIVES
-           ========================= */
+        ========================= */
 
         .archive-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
         }
 
         .archive-card {
             display: block;
-            background: #181818;
-            border: 1px solid #383838;
-            text-decoration: none;
+            min-width: 0;
+            background: #19151e;
+            border: 1px solid #514456;
+            outline: 1px solid #09080c;
             color: inherit;
-            transition: 0.25s;
+            text-decoration: none;
+            transition: 0.2s;
             overflow: hidden;
         }
 
         .archive-card:hover {
-            transform: translateY(-5px);
-            border-color: #999;
-            background: #202020;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            border-color: #b49abb;
+            background: #241c2a;
+            box-shadow: 0 0 12px rgba(174, 133, 190, 0.25);
         }
 
         .archive-image {
             width: 100%;
-            height: 180px;
+            height: 115px;
             object-fit: cover;
             display: block;
-            background: #252525;
+            background: #25202b;
+            border-bottom: 1px solid #514456;
         }
 
         .archive-content {
-            padding: 20px;
+            padding: 10px;
         }
 
         .archive-content h3 {
-            margin-top: 0;
-            color: #fff;
-            font-size: 20px;
+            margin: 0 0 8px;
+            color: #dfcce7;
+            font-size: 12px;
+            line-height: 1.7;
+            text-align: center;
         }
 
         .archive-content p {
-            color: #aaa;
-            line-height: 1.7;
-            font-size: 15px;
+            color: #aaa1ae;
+            line-height: 1.55;
+            font-size: 11px;
+            margin: 0;
         }
 
         /* =========================
            CATALOGUE
-           ========================= */
+        ========================= */
 
         .catalogue {
             text-align: center;
+            padding: 17px 12px;
+            background: #17131c;
+            border: 1px solid #403448;
+            outline: 1px solid #09080c;
+        }
+
+        .catalogue > p {
+            font-size: 12px;
+            color: #aaa1ae;
+            margin: 0 0 15px;
         }
 
         .catalogue-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 7px;
         }
 
         .catalogue-links a {
-            padding: 12px 20px;
-            background: #191919;
-            border: 1px solid #333;
-            color: #ccc;
+            padding: 6px 10px;
+            background: #211a28;
+            border: 1px solid #55445e;
+            color: #cbbbd3;
             text-decoration: none;
             font-family: 'Early GameBoy', monospace;
-            font-size: 12px;
+            font-size: 9px;
             transition: 0.2s;
         }
 
         .catalogue-links a:hover {
-            background: #292929;
+            background: #382941;
             color: #fff;
-            border-color: #777;
+            border-color: #a58aad;
         }
 
         /* =========================
            FEATURED GAME
-           ========================= */
+        ========================= */
 
         .featured-game {
-            max-width: 850px;
+            max-width: 650px;
             margin: auto;
         }
 
         .featured-game .archive-card {
-            width: 100%;
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            align-items: stretch;
         }
 
         .featured-game .archive-image {
-            height: 300px;
+            height: 100%;
+            min-height: 145px;
+            border-bottom: none;
+            border-right: 1px solid #514456;
+        }
+
+        .featured-game .archive-content {
+            padding: 15px;
+            align-self: center;
+        }
+
+        .featured-game .archive-content h3 {
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .featured-game .archive-content p {
+            font-size: 12px;
         }
 
         /* =========================
            CURATOR'S DESK
-           ========================= */
+        ========================= */
 
         .curator {
-            max-width: 850px;
+            max-width: 700px;
             margin: auto;
-            padding: 30px;
-            background: #171717;
-            border: 1px solid #333;
+            padding: 17px 22px;
+            background: #17131c;
+            border: 1px solid #514456;
+            outline: 1px solid #09080c;
             text-align: center;
         }
 
         .curator p {
-            line-height: 1.7;
-            color: #aaa;
+            line-height: 1.65;
+            color: #aaa1ae;
+            font-size: 12px;
+            margin: 6px 0;
         }
 
         /* =========================
            FOOTER
-           ========================= */
+        ========================= */
 
         footer {
-            border-top: 1px solid #333;
-            padding: 35px;
+            border-top: 3px double #514456;
+            padding: 18px;
             text-align: center;
-            color: #666;
-            font-size: 14px;
+            color: #817786;
+            font-size: 11px;
+            background: #0c0a10;
+        }
+
+        footer p {
+            margin: 4px 0;
         }
 
         footer p:first-child {
             font-family: 'Early GameBoy', monospace;
+            color: #bba7c5;
+            font-size: 10px;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 800px) {
+            .archive-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         /* =========================
            MOBILE
-           ========================= */
+        ========================= */
 
-        @media (max-width: 768px) {
+        @media (max-width: 520px) {
+            .site-shell {
+                max-width: calc(100% - 16px);
+                margin: 8px auto;
+            }
 
             header {
-                min-height: 300px;
-                padding: 40px 15px;
+                min-height: 210px;
+                padding: 25px 12px;
             }
 
             header h1 {
-                font-size: 32px;
-                letter-spacing: 2px;
+                font-size: 19px;
+                letter-spacing: 1px;
             }
 
             header p {
-                font-size: 14px;
+                font-size: 12px;
+            }
+
+            main {
+                padding: 22px 14px 8px;
             }
 
             h2 {
-                font-size: 23px;
-            }
-
-            .welcome {
-                font-size: 15px;
-            }
-
-            .nav-links {
-                gap: 10px 15px;
-            }
-
-            .nav-links a {
-                font-size: 10px;
+                font-size: 14px;
             }
 
             .archive-grid {
                 grid-template-columns: 1fr;
             }
 
-            .featured-game .archive-image {
-                height: 220px;
+            .archive-image {
+                height: 155px;
             }
 
+            .featured-game .archive-card {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-game .archive-image {
+                height: 180px;
+                border-right: none;
+                border-bottom: 1px solid #514456;
+            }
+
+            .nav-links {
+                gap: 5px 9px;
+            }
         }
-
     </style>
-
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER / BANNER
-         ========================= -->
+<div class="site-shell">
+
+    <!-- HEADER / BANNER -->
 
     <header>
-
         <div>
             <h1>THE VIDEO GAME CEMETERY</h1>
             <p>An archive for games that should never be forgotten.</p>
         </div>
-
     </header>
 
-
-    <!-- =========================
-         NAVIGATION
-         ========================= -->
+    <!-- NAVIGATION -->
 
     <nav>
-
         <div class="nav-links">
-
             <a href="index.html">HOME</a>
             <a href="#">GAMES</a>
             <a href="#">CHARACTERS</a>
@@ -358,24 +447,17 @@
             <a href="#">HISTORY</a>
             <a href="#">SOUNDTRACKS</a>
             <a href="#">COLLECTIBLES</a>
-
         </div>
-
     </nav>
-
 
     <main>
 
-        <!-- =========================
-             WELCOME
-             ========================= -->
+        <!-- WELCOME -->
 
         <section>
-
             <h2>Welcome to the Cemetery</h2>
 
             <div class="welcome">
-
                 <p>
                     Welcome to the Video Game Cemetery — a personal museum,
                     archive and collection dedicated to the history, worlds,
@@ -387,136 +469,97 @@
                     the games and series that deserve to be remembered,
                     researched and preserved.
                 </p>
-
             </div>
-
         </section>
 
-
-        <!-- =========================
-             FEATURED ARCHIVES
-             ========================= -->
+        <!-- FEATURED ARCHIVES -->
 
         <section>
-
             <h2>Featured Archives</h2>
 
             <div class="archive-grid">
 
-
                 <!-- CAVE OF MONSTERS -->
 
                 <a class="archive-card" href="#">
-
                     <img
                         class="archive-image"
                         src="images/caveofmonsters/bubblebobblecard.png"
                         alt="Cave of Monsters">
 
                     <div class="archive-content">
-
                         <h3>Cave of Monsters</h3>
-
                         <p>
                             The extensive Bubble Bobble universe archive,
                             containing games, characters, monsters, guides,
                             screenshots, history and more.
                         </p>
-
                     </div>
-
                 </a>
-
 
                 <!-- CASTLEVANIA -->
 
                 <a class="archive-card" href="#">
-
                     <img
                         class="archive-image"
                         src="images/castlevania/castlevaniasotnart.png"
                         alt="Castlevania">
 
                     <div class="archive-content">
-
                         <h3>Castlevania</h3>
-
                         <p>
                             An expanding archive dedicated to the games,
                             characters, creatures, history and mythology
                             of the Castlevania series.
                         </p>
-
                     </div>
-
                 </a>
-
 
                 <!-- NIGHTMARE CREATURES -->
 
                 <a class="archive-card" href="#">
-
                     <img
                         class="archive-image"
                         src="images/nightmarecreatures/nightmarecreaturesboxuk.png"
                         alt="Nightmare Creatures">
 
                     <div class="archive-content">
-
                         <h3>Nightmare Creatures</h3>
-
                         <p>
                             Explore the dark world of Nightmare Creatures,
                             including its monsters, characters, locations,
                             weapons and history.
                         </p>
-
                     </div>
-
                 </a>
-
 
                 <!-- SPUD'S ADVENTURE -->
 
                 <a class="archive-card" href="#">
-
                     <img
                         class="archive-image"
                         src="images/spudsadventure/spudboxusa.png"
                         alt="Spud's Adventure">
 
                     <div class="archive-content">
-
                         <h3>Spud's Adventure</h3>
-
                         <p>
                             Detailed information on the classic adventure RPG.
                         </p>
-
                     </div>
-
                 </a>
 
-
             </div>
-
         </section>
 
-
-        <!-- =========================
-             CEMETERY CATALOGUE
-             ========================= -->
+        <!-- CEMETERY CATALOGUE -->
 
         <section class="catalogue">
-
             <h2>The Cemetery Catalogue</h2>
 
-            <p>
-                Explore the wider collection.
-            </p>
+            <p>Explore the wider collection.</p>
 
             <div class="catalogue-links">
-
                 <a href="#">Games</a>
                 <a href="#">Characters</a>
                 <a href="#">Monsters</a>
@@ -525,58 +568,39 @@
                 <a href="#">History</a>
                 <a href="#">Soundtracks</a>
                 <a href="#">Collectibles</a>
-
             </div>
-
         </section>
 
-
-        <!-- =========================
-             FEATURED GAME
-             ========================= -->
+        <!-- FEATURED GAME -->
 
         <section>
-
             <h2>From the Grave...</h2>
 
             <div class="featured-game">
-
                 <a class="archive-card" href="#">
-
                     <img
                         class="archive-image"
                         src="images/spudsadventure/spudboxusa.png"
                         alt="Spud's Adventure">
 
                     <div class="archive-content">
-
                         <h3>Spud's Adventure</h3>
-
                         <p>
                             For the first time ever, a fully detailed
                             information source for the classic Game Boy
                             adventure RPG.
                         </p>
-
                     </div>
-
                 </a>
-
             </div>
-
         </section>
 
-
-        <!-- =========================
-             CURATOR'S DESK
-             ========================= -->
+        <!-- CURATOR'S DESK -->
 
         <section>
-
             <h2>The Curator's Desk</h2>
 
             <div class="curator">
-
                 <p>
                     The Cemetery is an ongoing project. New games,
                     discoveries, research, screenshots, guides and
@@ -587,26 +611,19 @@
                     Check back regularly to see what has recently
                     been recovered from the grave.
                 </p>
-
             </div>
-
         </section>
 
     </main>
 
-
-    <!-- =========================
-         FOOTER
-         ========================= -->
+    <!-- FOOTER -->
 
     <footer>
-
         <p>THE VIDEO GAME CEMETERY</p>
         <p>Established 2016</p>
-
     </footer>
 
-</body>
+</div>
 
+</body>
 </html>
-```
