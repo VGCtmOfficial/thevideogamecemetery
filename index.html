@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +9,22 @@
     <title>The Video Game Cemetery</title>
 
     <style>
+
+        /* =========================
+           FONT
+           ========================= */
+
+        @font-face {
+            font-family: 'Early GameBoy';
+            src: url('fonts/Early%20GameBoy.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* =========================
+           GENERAL
+           ========================= */
+
         * {
             box-sizing: border-box;
         }
@@ -15,7 +33,7 @@
             margin: 0;
             background: #0d0d0d;
             color: #d6d6d6;
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: 'Early GameBoy', monospace;
         }
 
         /* =========================
@@ -49,6 +67,40 @@
             font-size: 20px;
             color: #bbb;
             font-style: italic;
+        }
+
+        /* =========================
+           NAVIGATION BAR
+           ========================= */
+
+        nav {
+            background: #171717;
+            border-bottom: 2px solid #444;
+            border-top: 1px solid #333;
+            padding: 15px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px 35px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .nav-links a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 8px 5px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px #aaa;
         }
 
         /* =========================
@@ -90,9 +142,7 @@
 
         .archive-grid {
             display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
@@ -193,252 +243,325 @@
             font-size: 14px;
         }
 
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                min-height: 300px;
+                padding: 40px 15px;
+            }
+
+            header h1 {
+                font-size: 32px;
+                letter-spacing: 2px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .welcome {
+                font-size: 15px;
+            }
+
+            .nav-links {
+                gap: 10px 18px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body>
 
-<header>
-
-    <div>
-        <h1>THE VIDEO GAME CEMETERY</h1>
-        <p>An archive for games that should never be forgotten.</p>
-    </div>
-
-</header>
-
-
-<main>
-
     <!-- =========================
-         WELCOME
+         HEADER / BANNER
          ========================= -->
 
-    <section>
+    <header>
 
-        <h2>Welcome to the Cemetery</h2>
+        <div>
+            <h1>THE VIDEO GAME CEMETERY</h1>
+            <p>An archive for games that should never be forgotten.</p>
+        </div>
 
-        <div class="welcome">
+    </header>
 
-            <p>
-                Welcome to the Video Game Cemetery — a personal museum,
-                archive and collection dedicated to the history, worlds,
-                characters and memories of video games.
-            </p>
 
-            <p>
-                Within these grounds lie detailed archives dedicated to
-                the games and series that deserve to be remembered,
-                researched and preserved.
-            </p>
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
+
+    <nav>
+
+        <div class="nav-links">
+
+            <a href="index.html">HOME</a>
+            <a href="#">GAMES</a>
+            <a href="#">CHARACTERS</a>
+            <a href="#">MONSTERS</a>
+            <a href="#">CONSOLES</a>
+            <a href="#">GUIDES</a>
+            <a href="#">HISTORY</a>
+            <a href="#">SOUNDTRACKS</a>
+            <a href="#">COLLECTIBLES</a>
 
         </div>
 
-    </section>
+    </nav>
 
 
-    <!-- =========================
-         FEATURED ARCHIVES
-         ========================= -->
+    <main>
 
-    <section>
+        <!-- =========================
+             WELCOME
+             ========================= -->
 
-        <h2>Featured Archives</h2>
+        <section>
 
-        <div class="archive-grid">
+            <h2>Welcome to the Cemetery</h2>
 
+            <div class="welcome">
 
-            <!-- CAVE OF MONSTERS -->
+                <p>
+                    Welcome to the Video Game Cemetery — a personal museum,
+                    archive and collection dedicated to the history, worlds,
+                    characters and memories of video games.
+                </p>
 
-            <a class="archive-card" href="#">
+                <p>
+                    Within these grounds lie detailed archives dedicated to
+                    the games and series that deserve to be remembered,
+                    researched and preserved.
+                </p>
 
-                <img
-                    class="archive-image"
-                    src="images/caveofmonsters/bubblebobblecard.png"
-                    alt="Cave of Monsters">
+            </div>
 
-                <div class="archive-content">
-
-                    <h3>Cave of Monsters</h3>
-
-                    <p>
-                        The extensive Bubble Bobble universe archive,
-                        containing games, characters, monsters, guides,
-                        screenshots, history and more.
-                    </p>
-
-                </div>
-
-            </a>
+        </section>
 
 
-            <!-- CASTLEVANIA -->
+        <!-- =========================
+             FEATURED ARCHIVES
+             ========================= -->
 
-            <a class="archive-card" href="#">
+        <section>
 
-                <img
-                    class="archive-image"
-                    src="images/castlevania/castlevaniasotnart.png"
-                    alt="Castlevania">
+            <h2>Featured Archives</h2>
 
-                <div class="archive-content">
-
-                    <h3>Castlevania</h3>
-
-                    <p>
-                        An expanding archive dedicated to the games,
-                        characters, creatures, history and mythology
-                        of the Castlevania series.
-                    </p>
-
-                </div>
-
-            </a>
+            <div class="archive-grid">
 
 
-            <!-- NIGHTMARE CREATURES -->
+                <!-- CAVE OF MONSTERS -->
 
-            <a class="archive-card" href="#">
+                <a class="archive-card" href="#">
 
-                <img
-                    class="archive-image"
-                    src="images/nightmarecreatures/nightmarecreaturesboxuk.png"
-                    alt="Nightmare Creatures">
+                    <img
+                        class="archive-image"
+                        src="images/caveofmonsters/bubblebobblecard.png"
+                        alt="Cave of Monsters">
 
-                <div class="archive-content">
+                    <div class="archive-content">
 
-                    <h3>Nightmare Creatures</h3>
+                        <h3>Cave of Monsters</h3>
 
-                    <p>
-                        Explore the dark world of Nightmare Creatures,
-                        including its monsters, characters, locations,
-                        weapons and history.
-                    </p>
+                        <p>
+                            The extensive Bubble Bobble universe archive,
+                            containing games, characters, monsters, guides,
+                            screenshots, history and more.
+                        </p>
 
-                </div>
+                    </div>
 
-            </a>
+                </a>
 
 
-            <!-- Spud's Adventure -->
+                <!-- CASTLEVANIA -->
 
-            <a class="archive-card" href="#">
+                <a class="archive-card" href="#">
+
+                    <img
+                        class="archive-image"
+                        src="images/castlevania/castlevaniasotnart.png"
+                        alt="Castlevania">
+
+                    <div class="archive-content">
+
+                        <h3>Castlevania</h3>
+
+                        <p>
+                            An expanding archive dedicated to the games,
+                            characters, creatures, history and mythology
+                            of the Castlevania series.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- NIGHTMARE CREATURES -->
+
+                <a class="archive-card" href="#">
+
+                    <img
+                        class="archive-image"
+                        src="images/nightmarecreatures/nightmarecreaturesboxuk.png"
+                        alt="Nightmare Creatures">
+
+                    <div class="archive-content">
+
+                        <h3>Nightmare Creatures</h3>
+
+                        <p>
+                            Explore the dark world of Nightmare Creatures,
+                            including its monsters, characters, locations,
+                            weapons and history.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- SPUD'S ADVENTURE -->
+
+                <a class="archive-card" href="#">
+
+                    <img
+                        class="archive-image"
+                        src="images/spudsadventure/spudboxusa.png"
+                        alt="Spud's Adventure">
+
+                    <div class="archive-content">
+
+                        <h3>Spud's Adventure</h3>
+
+                        <p>
+                            Detailed information on the classic adventure RPG.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CEMETERY CATALOGUE
+             ========================= -->
+
+        <section class="catalogue">
+
+            <h2>The Cemetery Catalogue</h2>
+
+            <p>
+                Explore the wider collection.
+            </p>
+
+            <div class="catalogue-links">
+
+                <a href="#">Games</a>
+                <a href="#">Characters</a>
+                <a href="#">Monsters</a>
+                <a href="#">Consoles</a>
+                <a href="#">Guides</a>
+                <a href="#">History</a>
+                <a href="#">Soundtracks</a>
+                <a href="#">Collectibles</a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURED GAME
+             ========================= -->
+
+        <section>
+
+            <h2>From the Grave...</h2>
+
+            <div class="archive-card">
 
                 <img
                     class="archive-image"
                     src="images/spudsadventure/spudboxusa.png"
-                    alt="Featured archive">
+                    alt="Spud's Adventure">
 
                 <div class="archive-content">
 
                     <h3>Spud's Adventure</h3>
 
                     <p>
-                        Detailed information on the classic adventure RPG.
+                        For the first time ever, a fully detailed information
+                        source for the classic Game Boy adventure RPG.
                     </p>
 
                 </div>
 
-            </a>
+            </div>
+
+        </section>
 
 
-        </div>
+        <!-- =========================
+             CURATOR'S DESK
+             ========================= -->
 
-    </section>
+        <section>
 
+            <h2>The Curator's Desk</h2>
 
-    <!-- =========================
-         CEMETERY CATALOGUE
-         ========================= -->
-
-    <section class="catalogue">
-
-        <h2>The Cemetery Catalogue</h2>
-
-        <p>
-            Explore the wider collection.
-        </p>
-
-        <div class="catalogue-links">
-
-            <a href="#">Games</a>
-            <a href="#">Characters</a>
-            <a href="#">Monsters</a>
-            <a href="#">Consoles</a>
-            <a href="#">Guides</a>
-            <a href="#">History</a>
-            <a href="#">Soundtracks</a>
-            <a href="#">Collectibles</a>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         FEATURED GAME
-         ========================= -->
-
-    <section>
-
-        <h2>From the Grave...</h2>
-
-        <div class="archive-card">
-
-            <img
-                class="archive-image"
-                src="images/spudsadventure/spudboxusa.png"
-                alt="Featured game">
-
-            <div class="archive-content">
-
-                <h3>Spud's Adventure</h3>
+            <div class="curator">
 
                 <p>
-                    For the first time ever, a fully detailed information source for the classic Game Boy adventure RPG.
+                    The Cemetery is an ongoing project. New games,
+                    discoveries, research, screenshots, guides and
+                    archival material will continue to be added.
+                </p>
+
+                <p>
+                    Check back regularly to see what has recently
+                    been recovered from the grave.
                 </p>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+    </main>
 
 
     <!-- =========================
-         CURATOR'S DESK
+         FOOTER
          ========================= -->
 
-    <section>
+    <footer>
 
-        <h2>The Curator's Desk</h2>
+        <p>THE VIDEO GAME CEMETERY</p>
+        <p>Established 2016</p>
 
-        <div class="curator">
-
-            <p>
-                The Cemetery is an ongoing project. New games,
-                discoveries, research, screenshots, guides and
-                archival material will continue to be added.
-            </p>
-
-            <p>
-                Check back regularly to see what has recently
-                been recovered from the grave.
-            </p>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer>
-
-    <p>THE VIDEO GAME CEMETERY</p>
-    <p>Established 2016</p>
-
-</footer>
+    </footer>
 
 </body>
+
 </html>
+```
