@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floyd - Cave Of Monsters</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=Francois+One&family=Coda&display=swap');
+*{box-sizing:border-box}
+html{background:#000}
+body{margin:0;background:#000 url('images/caveofmonsters/caveofmonsters_background.png') repeat;color:#fff;font-family:'Francois One',Arial,sans-serif;font-size:15px;line-height:1.6}
+a{color:#1d79f0;text-decoration:none}a:hover{text-decoration:underline}
+.site{width:940px;max-width:calc(100% - 28px);margin:0 auto}
+header{height:276px;position:relative;background:transparent}
+.brand-strip{height:115px;margin-top:83px;position:absolute;top:0;left:0;width:100%;background:transparent url('https://site-hc6kh9az.websitecdn.com/uploads/o/e7070f04f99e4bf0a6a22c5cf70a5cbc.jpg?v=230904015837') repeat center}
+.brand{position:absolute;top:81px;left:0;width:100%;height:111px;display:flex;align-items:center;justify-content:center}
+.brand img{position:absolute;right:28px;top:-41px;width:193px;height:196px;object-fit:contain}
+.brand-title{width:754px;text-align:center;padding-right:120px}
+.brand-title h1{font-family:'Cherry Cream Soda',Georgia,serif;font-size:42px;line-height:1.2;color:#00ff07;margin:0}
+.brand-title p{font-size:18px;margin:5px 0 0}
+nav{position:absolute;top:auto;bottom:0;left:0;width:100%;z-index:5;background:#090909;border-bottom:2px solid #f6ac00}
+nav ul{display:flex;justify-content:space-between;gap:8px;list-style:none;margin:0;padding:10px 8px}
+nav li{position:relative}
+nav a{display:block;color:#fff;font-family:Arial,sans-serif;font-size:11px;padding:8px 5px;white-space:nowrap}
+nav li ul{display:none;position:absolute;top:100%;left:0;min-width:190px;background:#f6ac00;padding:5px;z-index:10;flex-direction:column;gap:0}
+nav li:hover>ul,nav li:focus-within>ul{display:flex}
+nav li ul a{font-size:13px;padding:7px 10px}
+nav li ul a:hover{background:#fcedcc;color:#111}
+.content{background:rgba(0,0,0,.72);padding:0 0 30px;min-height:700px}
+.hero{display:grid;grid-template-columns:285px 1fr;gap:25px;min-height:396px;padding:0 27px 10px}
+.hero-art{padding-top:42px;display:flex;justify-content:center;align-items:flex-start}
+.hero-art img{width:257px;height:344px;object-fit:contain}
+.hero-copy{padding-top:0}
+h2.page-name{font-family:'Cherry Cream Soda',Georgia,serif;color:#00cf25;font-size:30px;text-align:center;margin:0 0 10px;line-height:1.4}
+h3{font-family:'Cherry Cream Soda',Georgia,serif;color:#0062dc;font-size:22px;line-height:1.4;margin:0 0 8px}
+.hero-copy h3{margin-top:12px}
+.hero-copy .synopsis-text{font-size:15px}
+.appearances{border-top:1px solid #858585;padding:0 0 20px;min-height:108px}
+.appearances h3,.name-section h3,.cheat-section h3{margin:0}
+.appearances ul{margin:0;padding-left:25px}
+.name-section{border-top:1px solid #858585;padding-top:0}
+.name-section>h3{margin:0 0 7px}
+.name-section .name-copy{min-height:390px}
+.name-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;align-items:start;margin:0 0 18px}
+.gallery-item{text-align:center;min-width:0}
+.gallery-item img{width:100%;height:185px;object-fit:contain;display:block}
+.gallery-item p{margin:0;font-size:15px;line-height:1.6}
+.rule{border:0;border-top:1px solid #858585;margin:12px 0 0}
+.cheat-section{padding-top:0}
+.cheat-section h3{margin:0 0 6px}
+.cheat-section p{margin:0 0 12px}
+.code-lines{font-family:'Coda',monospace;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}
+.see-also{margin-top:25px;max-width:500px}
+footer{min-height:87px;padding:25px 0;text-align:center;font-size:14px;border-top:1px solid #858585}
+footer p{margin:0}
+footer .url{text-align:right}
+@media(max-width:700px){
+ header{height:245px}nav{position:absolute;top:auto;bottom:0}nav ul{flex-wrap:wrap;justify-content:center}nav li ul{position:static}.brand-strip{top:0;margin-top:0;height:130px}.brand{top:38px;height:auto;min-height:130px}.brand-title{width:100%;padding:0 110px 0 8px}.brand-title h1{font-size:30px}.brand-title p{font-size:14px}.brand img{right:4px;top:-10px;width:105px;height:110px}
+ .hero{grid-template-columns:1fr;gap:10px;padding:15px 12px 20px;min-height:0}.hero-art{padding-top:0}.hero-art img{max-width:100%;height:auto;max-height:344px}.hero-copy{padding:0 5px}.appearances{padding:10px 8px 18px;min-height:0}.name-section{padding:10px 8px 0}.name-section .name-copy{min-height:0}.name-gallery{gap:8px}.gallery-item img{height:115px}.gallery-item p{font-size:12px}.cheat-section{padding:10px 8px 0}.see-also{padding:0 8px}
+}
+</style>
+</head>
+<body>
+<div class="site">
+<header>
+<nav aria-label="Main navigation"><ul>
+<li><a href="../index.html">HOME ▾</a><ul><li><a href="../index.html">Home</a></li><li><a href="../dedication/">Dedication</a></li><li><a href="../downloads/">Download Zone</a></li></ul></li>
+<li><a href="../atlas/">ATLAS ▾</a><ul><li><a href="../atlas/">Atlas</a></li><li><a href="../puzzle-tower/">Puzzle Tower</a></li><li><a href="../starting-road/">Starting Road</a></li></ul></li>
+<li><a href="../bubble-bobble/">BUBBLE BOBBLE ▾</a><ul><li><a href="../bubble-bobble/">Games</a></li><li><a href="../characters/">Characters</a></li><li><a href="../monsters/">Monsters</a></li></ul></li>
+<li><a href="../rainbow-islands/">RAINBOW ISLANDS</a></li><li><a href="../parasol-stars/">PARASOL STARS</a></li>
+<li><a href="../puzzle-bobble/">PUZZLE BOBBLE ▾</a><ul><li><a href="../puzzle-bobble/">Games</a></li><li><a href="../puzzle-bobble/puzzle-bobble-2/">Puzzle Bobble 2</a></li></ul></li>
+<li><a href="../other/">OTHER</a></li><li><a href="../clones/">CLONES</a></li>
+</ul></nav>
+<div class="brand-strip"></div><div class="brand"><div class="brand-title"><h1>Cave Of Monsters</h1><p>The Ultimate Bubble Bobble Archive</p></div><img src="https://site-hc6kh9az.wsecdn1.websitecdn.com/uploads/r/196-196-193-196-1-0/0919c4456be24ec5a02d7dae93c9489b.png?v=261201114219" alt="Cave Of Monsters logo"></div>
+</header>
+<main class="content">
+<section class="hero">
+<div class="hero-art"><img src="images/caveofmonsters/floyd.png" alt="Floyd"></div>
+<div class="hero-copy"><h2 class="page-name">FLOYD/???</h2><h3>SYNOPSIS</h3><div class="synopsis-text"><p class="paragraph2">Floyd* is a character from Puzzle Bobble 2 that was cut from the game before it was released, assumed because of his similarity to Sonic The Hedgehog. Despite being cut however, his data can still be found in an almost complete state in the games files and could be accessed via a special cheat code using a gameshark. In the 2023 re-release of Puzzle Bobble 2 for modern systems, he is put back into the game as a playable character by default under the name "???".</p>
+<p class="paragraph2"> </p>
+<p class="paragraph2">Floyd is a pink hare that resembles Sonic The Hedgehog. He has spikey hair and is extremely fast as seen in his winning animation. He wears blue dungarees and due to his unfinished state, has no voice and less animations than the rest of the Puzzle Bobble 2 cast. He is generally referred to as "Rabbit" by fans. </p>
+<p class="paragraph2"> </p>
+<p class="paragraph2">note: *means the name has not been 100% confirmed by Taito.</p>
+</div></div>
+</section>
+<section class="appearances"><h3>APPEARANCES</h3><ul>
+<li class="paragraph2">Puzzle Bobble 2/Bust-A-Move 2</li>
+<li class="paragraph2">Puzzle Bobble 2X</li>
+</ul>
+</section>
+<section class="name-section"><h3>NAME</h3><div class="name-copy"><p class="paragraph2">The characters official name has never been released to the public as the character was cut before the game was released, only remaining in the intro sequence amongst the other Puzzle Bobble 2 cast and accessible only via a very unconventional cheat. In the 2023 re-release, known as the "S-Tribute", he is named simply "???". However, with intense research and some estimation from us at CaveOfMonsters.co.uk we have come to the conclusion it is most likely his name was meant to be Floyd. </p>
+<p class="paragraph2"> </p>
+<p class="paragraph2">The character is often referred to as a pink rabbit, a red rabbit or sometime just "rabbit". But these are some things to consider:</p>
+<ul>
+<li class="paragraph2">The character is fast. Upon winning a game, he runs at lightning speed back and forth (very much like Sonic The Hedgehog).</li>
+<li class="paragraph2">The fable "The Tortoise And The Hare" is about a hare that runs very fast.</li>
+<li class="paragraph2">The Tortoise And The Hare algorithm is known as "Floyd's Algorithm". </li>
+<li class="paragraph2">He is pink.</li>
+<li class="paragraph2">In the games sounds files there is a random sound file called "FinkPloyd".</li>
+</ul>
+<p class="paragraph2"> </p>
+<p class="paragraph2">Together, these elements imply that originally his name was meant to be Floyd, making him "Pink Floyd". The sound files' flip of the enitials could be, similar to the Sonic The Hedgehog similarities, a worry for Taito of copyright infringement. This is most likely why his name was never revealed along with his apperance leading him to be cut altogether. </p>
+</div>
+<div class="name-gallery">
+<div class="gallery-item"><img src="images/caveofmonsters/floydingame.jpg" alt="Floyd in game"><p class="paragraph2" style="text-align: center;">Floyd in game.</p>
+</div>
+<div class="gallery-item"><img src="images/caveofmonsters/floydsounds.jpg" alt="FINKPLOYD sound file"><p class="paragraph2" style="text-align: center;">FINKPLOYD can be found in the sound files.</p>
+</div>
+<div class="gallery-item"><img src="images/caveofmonsters/floydalgorithm.jpg" alt="Tortoise and the Hare"><p class="paragraph2" style="text-align: center;"><span class="fontSize" style="font-size: 13px; letter-spacing: inherit; line-height: inherit;">Tortoise &amp; The Hare is known as "Floyd's Algorithm".</span></p>
+</div>
+</div></section>
+<hr class="rule">
+<section class="cheat-section"><h3>CHEAT FOR 2X</h3><p class="paragraph2">You can play as Floyd by modifying the Puzzle Bobble 2X arcade rom, or by using a cheat .XML file for that game. He is not playable by any other means, unlike the rest of the cast. To play as Floyd, edit the .XML file and paste this code inside:</p>
+<p class="paragraph2"> </p>
+<p class="paragraph2" style="font-family:Francois One;line-height:1.6;"><span class="fontFamily" style="font-family: Coda; letter-spacing: inherit; line-height: inherit;">&lt;cheat desc="Play as Floyd (1P)"&gt;</span></p>
+<p class="paragraph2" style="font-family:Francois One;line-height:1.6;"><span class="fontFamily" style="font-family: Coda; letter-spacing: inherit; line-height: inherit;">         &lt;script state="run"&gt;</span></p>
+<p class="paragraph2" style="font-family:Francois One;line-height:1.6;"><span class="fontFamily" style="font-family: Coda; letter-spacing: inherit; line-height: inherit;">           &lt;action&gt;:maincpu.ppb@41ECCA=FF&lt;/action&gt;</span></p>
+<p class="paragraph2" style="font-family:Francois One;line-height:1.6;"><span class="fontFamily" style="font-family: Coda; letter-spacing: inherit; line-height: inherit;">           &lt;action&gt;:maincpu.ppb@41ECCB=FC&lt;/action&gt;</span></p>
+<p class="paragraph2" style="font-family:Francois One;line-height:1.6;"><span class="fontFamily" style="font-family: Coda; letter-spacing: inherit; line-height: inherit;">         &lt;/script&gt;</span></p>
+<p class="paragraph2" style="font-family:Francois One;line-height:1.6;"><span class="fontFamily" style="font-family: Coda; letter-spacing: inherit; line-height: inherit;">  &lt;/cheat&gt;</span></p>
+<p class="paragraph2" style="font-family:Francois One;line-height:1.6;"> </p>
+<p class="paragraph2" style="font-family:Francois One;line-height:1.6;"><span class="fontFamily" style='font-family: "Francois One"; letter-spacing: inherit; line-height: inherit;'>You can achieve the same result by modifying the rom itself with the same values, but you will need to know some assembly code to do this.</span></p>
+</section>
+<hr class="rule">
+<section class="cheat-section"><h3>CHEAT FOR SEGA SATURN</h3><p class="paragraph2">You can play as Floyd in the Sega Saturn version also. Originally, it was believed that this was impossible. However, the code was discovered (interestingly on a website that documented Floyd under the name "Usagi", which was what we originally used to list him as on our first version of the caveofmonsters!) You can play as Floyd with the following code:</p>
+<p class="paragraph2"> </p>
+<p class="paragraph2"><span class="fontFamily" style='font-family: "Cherry Cream Soda"; letter-spacing: inherit; line-height: inherit;'>C+Z+L+R</span></p>
+</section>
+<div class="see-also"><p class="paragraph2">See also:</p>
+<ul>
+<li class="paragraph2">Kajako</li>
+<li class="paragraph2">Gaago</li>
+<li class="paragraph2"><a class="link" data-linkto='{"type":"Page","pageId":13132932,"inNewWin":false}' href="/puzzle-bobble-2">Puzzle Bobble 2</a></li>
+</ul></div>
+</main>
+<footer><p>Copyright 2012-2026. The Only True Cave Of Monsters Website. All Rights Reserved.</p><p class="url">www.caveofmonsters.co.uk</p></footer>
+</div>
+</body></html>
